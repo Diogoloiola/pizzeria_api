@@ -46,3 +46,12 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+# Brakeman analyzes our code for security vulnerabilities
+gem 'brakeman'
+# bundler-audit checks our dependencies for vulnerabilities
+gem 'bundler-audit'
+
+# lograge changes Rails' logging to a more
+# traditional one-line-per-event format
+gem 'lograge'

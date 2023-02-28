@@ -43,6 +43,9 @@ def help
   log ''
   log ' bin/run'
   log ''
+  log 'LOGRAGE_IN_DEVELOPMENT=true bin/run'
+  log '# run app locally using'
+  log '# production-like logging'
   # run app locally"
   log ''
   log ' bin/ci'

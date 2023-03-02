@@ -42,6 +42,14 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 end
 
+group :test do
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1' # Serve para limpar a base de testes
+  gem 'factory_bot', '~> 6.2', '>= 6.2.1' # cria modelos para os teste
+  gem 'faker', '~> 3.1', '>= 3.1.1' # lib para dados falsos
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1' # lib para os testes
+  gem 'shoulda-matchers', '~> 5.3' # ajuda nos testar os modelos
+end
+
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

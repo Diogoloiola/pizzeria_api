@@ -52,14 +52,15 @@ group :test do
 end
 
 group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-end
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
 
-# Brakeman analyzes our code for security vulnerabilities
-gem 'brakeman'
-# bundler-audit checks our dependencies for vulnerabilities
-gem 'bundler-audit'
+  gem 'lefthook', '~> 1.3'
+
+  gem 'brakeman', '~> 5.4'
+  gem 'bundler-audit', '~> 0.9.1'
+end
 
 # lograge changes Rails' logging to a more
 # traditional one-line-per-event format

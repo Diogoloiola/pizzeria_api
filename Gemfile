@@ -65,3 +65,4 @@ end
 # lograge changes Rails' logging to a more
 # traditional one-line-per-event format
 gem 'lograge'
+gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth' # gem para autenticação dos usuários

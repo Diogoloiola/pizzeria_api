@@ -4,6 +4,7 @@ module SellerService
       seller = Seller.create! seller_params
 
       if seller.valid?
+        SellerMailer.with(seller:).welcome_email.deliver_now
         Result.new(valid: true, seller:)
       else
         Result.new(valid: false, seller:)

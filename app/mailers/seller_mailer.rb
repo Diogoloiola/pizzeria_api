@@ -4,6 +4,6 @@ class SellerMailer < ApplicationMailer
   def welcome_email
     @seller = params[:seller]
     @url = 'http://example.com/login'
-    mail(to: @seller.email, subject: 'Welcome to My Awesome Site')
+    mail(to: @seller.email, subject: 'Bem vindo ao nosso site')
   end
 end

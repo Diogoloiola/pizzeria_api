@@ -18,6 +18,12 @@ RSpec.describe SellerService::CreateSeller, type: :service do
 
         expect(response.created?).to be true
       end
+
+      it 'Valida se o email de boas vindas foi enviado' do
+        service = SellerService::CreateSeller.new
+
+        expect { service.create_seller(valid_attributes) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
     end
   end
 end

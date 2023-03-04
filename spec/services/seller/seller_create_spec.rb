@@ -4,6 +4,7 @@ RSpec.describe SellerService::CreateSeller, type: :service do
   let(:valid_attributes) do
     { name: Faker::Name.name,
       email: Faker::Internet.email,
+      cpf: CPF.generate,
       password: Faker::Number.number(digits: 10).to_s,
       profile: %w[admin functionarty].sample }
   end

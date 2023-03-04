@@ -9,9 +9,10 @@ module Sales
       def show; end
 
       def create
-        @seller = Seller.new(seller_params)
+        result = SellerService::CreateSeller.new.create_seller(seller_params)
+        @seller = result.seller
 
-        if @seller.save
+        if result.created?
           render :show, status: :created
         else
           render json: @seller.errors, status: :unprocessable_entity
@@ -39,7 +40,7 @@ module Sales
       def seller_params
         return {} unless params.key?(:seller)
 
-        params.require(:seller).permit(:email, :cpf, :name, :profile)
+        params.require(:seller).permit(:email, :cpf, :name, :profile).merge(skip_password_validation: true)
       end
     end
   end

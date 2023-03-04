@@ -39,7 +39,7 @@ module Sales
       def seller_params
         return {} unless params.key?(:seller)
 
-        params.require(:seller).permit(:email, :cpf, :name)
+        params.require(:seller).permit(:email, :cpf, :name, :profile)
       end
     end
   end

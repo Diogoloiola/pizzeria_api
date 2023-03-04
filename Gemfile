@@ -13,7 +13,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -63,6 +63,7 @@ group :development do
 end
 
 # lograge changes Rails' logging to a more
-# traditional one-line-per-event format
 gem 'lograge'
-gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth' # gem para autenticação dos usuários
+# traditional one-line-per-event format
+gem 'cpf_cnpj', '~> 0.5.0' # lib que valida ou cria cpf/cnpj de forma dinanmica.
+gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth' # gem para autenticação dos usuáriosgem 'lograge'

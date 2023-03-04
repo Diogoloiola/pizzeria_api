@@ -9,14 +9,17 @@ module SellerService
       else
         Result.new(valid: false, seller:)
       end
+    rescue StandardError => e
+      Result.new(valid: false, errors: e.message)
     end
 
     class Result
-      attr_reader :seller
+      attr_reader :seller, :errors
 
-      def initialize(valid:, seller:)
+      def initialize(valid:, seller: nil, errors: nil)
         @valid = valid
         @seller = seller
+        @errors = errors
       end
 
       def created?

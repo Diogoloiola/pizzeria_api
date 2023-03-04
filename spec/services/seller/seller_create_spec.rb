@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'byebug'
 
 RSpec.describe SellerService::CreateSeller, type: :service do
   let(:valid_attributes) do
@@ -9,20 +8,38 @@ RSpec.describe SellerService::CreateSeller, type: :service do
       profile: %w[admin functionarty].sample }
   end
 
+  let(:invalid_attributes) do
+    { name: Faker::Name.name, email: Faker::Internet.email, profile: nil }
+  end
+
   describe 'Criando um vendedor' do
     context 'Com parametros válidos' do
       it 'Novo vendedor' do
-        service = SellerService::CreateSeller.new
-
-        response = service.create_seller(valid_attributes)
+        response = subject.create_seller(valid_attributes)
 
         expect(response.created?).to be true
       end
 
       it 'Valida se o email de boas vindas foi enviado' do
-        service = SellerService::CreateSeller.new
+        expect { subject.create_seller(valid_attributes) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
 
-        expect { service.create_seller(valid_attributes) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    context 'Com parametros inválidos' do
+      it 'Valida se o objeto retornado ainda é um Result' do
+        response = subject.create_seller(invalid_attributes)
+
+        expect(response).to be_a SellerService::CreateSeller::Result
+      end
+
+      it 'Valida se o objeto não foi criado' do
+        response = subject.create_seller(invalid_attributes)
+
+        expect(response.created?).to be false
+      end
+
+      it 'Valida se o email de boas vindas não foi enviado' do
+        expect { subject.create_seller(invalid_attributes) }.to change { ActionMailer::Base.deliveries.count }.by(0)
       end
     end
   end

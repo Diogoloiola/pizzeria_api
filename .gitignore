@@ -34,3 +34,4 @@
 # secrets we need for dev and test, so
 # wes really don't want them in version control
 .env.*
+.byebug_history

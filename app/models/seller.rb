@@ -14,4 +14,8 @@ class Seller < ActiveRecord::Base
     admin: 0,
     functionarty: 1
   }
+
+  def active_for_authentication?
+    super && active?
+  end
 end

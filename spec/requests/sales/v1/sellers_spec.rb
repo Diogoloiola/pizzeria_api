@@ -65,4 +65,13 @@ RSpec.describe '/sales/v1/sellers', type: :request do
       end
     end
   end
+
+  describe 'DELETE' do
+    it 'Destroi um vendedor' do
+      seller = Seller.create! valid_attributes
+      delete sales_v1_seller_url(seller), headers: valid_headers, as: :json
+      expect(response).to have_http_status(:no_content)
+      expect { seller.reload }.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
 end

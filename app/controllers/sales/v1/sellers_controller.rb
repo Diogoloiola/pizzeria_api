@@ -12,7 +12,7 @@ module Sales
         @seller = Seller.new(seller_params)
 
         if @seller.save
-          render :show, status: :created, location: @seller
+          render :show, status: :created
         else
           render json: @seller.errors, status: :unprocessable_entity
         end
@@ -20,7 +20,7 @@ module Sales
 
       def update
         if @seller.update(seller_params)
-          render :show, status: :ok, location: @seller
+          render :show, status: :ok
         else
           render json: @seller.errors, status: :unprocessable_entity
         end

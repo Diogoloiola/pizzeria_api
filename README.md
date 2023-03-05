@@ -2,7 +2,7 @@
 
 Link para o desafio: https://github.com/evermood/rails-pizza-challenge
 
-Models que estaram na aplicação.
+Models que estaram na aplicação. O objetivo é apenas para estudo
 
 Pizzeria
 Address

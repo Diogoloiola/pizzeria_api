@@ -2,6 +2,7 @@
 
 Ingredient.destroy_all
 Pizza.destroy_all
+PromotionalCode.destroy_all
 
 ingredients = [
   { name: 'Onions', multiplier: 1 },
@@ -24,3 +25,5 @@ Pizza.find_each do |pizza|
     PizzaDefaultIngredient.create! pizza_id: pizza.id, ingredient_id: ingredient.id
   end
 end
+
+PromotionalCode.create!(code: SecureRandom.uuid.slice(0, 5), from: 2, to: 1, target_id: Pizza.last.id, size: 1)

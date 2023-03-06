@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe '/sales/v1/pizzas', type: :request do
   let(:valid_attributes) do
     { name: Faker::Food.sushi, value: 1 }
@@ -15,7 +14,6 @@ RSpec.describe '/sales/v1/pizzas', type: :request do
   end
 
   describe 'GET' do
-   
     it 'retorna todas as pizzas' do
       Pizza.create! valid_attributes
       get sales_v1_pizzas_url, headers: valid_headers, as: :json
@@ -24,7 +22,7 @@ RSpec.describe '/sales/v1/pizzas', type: :request do
 
     it 'retorna uma pizza baseada no id' do
       pizza = Pizza.create! valid_attributes
-      get sales_v1_pizza_url(pizza), as: :json
+      get sales_v1_pizza_url(pizza), as: :json, headers: valid_headers
       expect(response).to be_successful
     end
   end

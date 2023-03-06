@@ -1,6 +1,6 @@
 module Sales
   module V1
-    class PizzasController < ApplicationController
+    class PizzasController < ApiController
       before_action :set_pizza, only: %i[show update destroy]
 
       def index

@@ -3,5 +3,6 @@ namespace :sales, defaults: { format: :json } do
     resources :sellers
     resources :pizzas
     resources :ingredients
+    resources :discounts
   end
 end

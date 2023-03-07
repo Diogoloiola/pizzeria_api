@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :pizza do
     name { Faker::Food.sushi }
-    value { Faker::Number.number(digits: 1) }
+    value { 10 }
     active { true }
   end
 end

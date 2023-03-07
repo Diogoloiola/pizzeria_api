@@ -4,5 +4,6 @@ namespace :sales, defaults: { format: :json } do
     resources :pizzas
     resources :ingredients
     resources :discounts
+    resources :promotional_codes
   end
 end

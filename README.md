@@ -6,12 +6,12 @@ Models que estaram na aplicação. O objetivo é apenas para estudo
 
 Pizzeria
 Address
-Pizza
-Ingredient
-Discount
+Pizza Feito
+Ingredient Feito
+Discount Feito
 User
-Seller
-PromotionalCode
+Seller Feito
+PromotionalCode Feito
 Drink
 Order
 OrderItem

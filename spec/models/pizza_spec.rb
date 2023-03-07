@@ -9,5 +9,6 @@ RSpec.describe Pizza, type: :model do
   context 'Validando as associaçoes' do
     it { should have_many(:ingredients).through(:pizza_default_ingredients) }
     it { should have_many(:ingredients) }
+    it { should have_many(:prices) }
   end
 end

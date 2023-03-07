@@ -38,7 +38,7 @@ module Sales
       end
 
       def pizza_params
-        params.require(:pizza).permit(:name, :value, :active)
+        params.require(:pizza).permit(:name, :value, :active, prices_attribues: %i[id value size])
       end
     end
   end

@@ -10,12 +10,13 @@ module Sales
       def show; end
 
       def create
-        @pizza = Pizza.new(pizza_params)
+        result = PizzaService::CreatePizzaService.new.create_pizza(pizza_params)
 
-        if @pizza.save
+        if result.created?
+          @pizza = result.pizza
           render :show, status: :created
         else
-          render json: @pizza.errors, status: :unprocessable_entity
+          render json: result.errors, status: :unprocessable_entity
         end
       end
 
@@ -38,7 +39,7 @@ module Sales
       end
 
       def pizza_params
-        params.require(:pizza).permit(:name, :value, :active, prices_attribues: %i[id value size])
+        params.require(:pizza).permit(:name, :value, :active, prices_attributes: %i[id value size])
       end
     end
   end

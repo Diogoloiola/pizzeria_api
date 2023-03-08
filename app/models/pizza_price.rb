@@ -1,5 +1,6 @@
 class PizzaPrice < ApplicationRecord
-  validates :value, :size, numericality: { greater_than: 0 }, presence: true
+  validates :value, numericality: { greater_than: 0 }, presence: true
+  validates :size, presence: true
 
   belongs_to :pizza
 

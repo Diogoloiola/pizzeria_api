@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe '/sales/v1/pizzas', type: :request do
+RSpec.describe '/sales/v1/pizzas', type: :request do # rubocop:disable Metrics/BlockLength: Block has too many lines.
   let(:valid_attributes) do
-    { name: Faker::Food.sushi, value: 1 }
+    { name: Faker::Food.sushi, value: 1, prices_attributes: [{ size: :small, value: 10 }] }
   end
 
   let(:invalid_attributes) do
@@ -27,7 +27,7 @@ RSpec.describe '/sales/v1/pizzas', type: :request do
     end
   end
 
-  describe 'POST /create' do
+  describe 'POST /create' do # rubocop:disable Metrics/BlockLength: Block has too many lines.
     context 'Com parametros válidos' do
       it 'cria uma nova pizza' do
         expect do
@@ -61,7 +61,7 @@ RSpec.describe '/sales/v1/pizzas', type: :request do
     end
   end
 
-  describe 'PATCH /update' do
+  describe 'PATCH /update' do # rubocop:disable Metrics/BlockLength: Block has too many lines.
     context 'Com parametos válidos' do
       let(:new_attributes) do
         { name: Faker::Food.sushi }

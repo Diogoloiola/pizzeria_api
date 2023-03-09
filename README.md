@@ -13,6 +13,6 @@ User
 Seller Feito
 PromotionalCode Feito
 Drink
-Order
+Order -> Discount code -> has_one, 
 OrderItem
 User

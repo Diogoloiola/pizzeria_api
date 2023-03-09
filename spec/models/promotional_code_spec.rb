@@ -7,4 +7,9 @@ RSpec.describe PromotionalCode, type: :model do
     it { should validate_presence_of(:size) }
     it { should validate_presence_of(:code) }
   end
+
+  context 'validandos os relacionamentos' do
+    it { should have_many(:orders).through(:order_promotional_codes) }
+    it { should have_many(:order_promotional_codes) }
+  end
 end

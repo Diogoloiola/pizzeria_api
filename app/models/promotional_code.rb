@@ -7,6 +7,9 @@ class PromotionalCode < ApplicationRecord
 
   belongs_to :target, class_name: 'Pizza'
 
+  has_many :order_promotional_codes
+  has_many :orders, through: :order_promotional_codes
+
   enum size: {
     small: 1,
     medium: 2,

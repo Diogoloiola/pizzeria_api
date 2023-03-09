@@ -4,4 +4,7 @@ class Ingredient < ApplicationRecord
 
   has_many :pizza_default_ingredients, dependent: :destroy
   has_many :pizzas, through: :pizza_default_ingredients
+
+  has_many :order_item_add_ingredients
+  has_many :order_items, through: :order_item_add_ingredients
 end

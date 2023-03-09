@@ -9,7 +9,7 @@ module PizzaService
       if pizza.save
         Result.new(valid: true, pizza:)
       else
-        Result.new(valid: false, pizza:, errors: pizza.errors.join(', '))
+        Result.new(valid: false, errors: pizza.errors.objects.map(&:full_message).join(', '))
       end
     end
 

@@ -49,3 +49,8 @@ order = Order.new(
 )
 
 order.save!
+
+order.itens.each do |item|
+  item.order_item_add_ingredients.create!(order_item_id: item.id, add_id: Ingredient.last.id)
+  item.order_item_remove_ingredients.create!(order_item_id: item.id, remove_id: Ingredient.first.id)
+end

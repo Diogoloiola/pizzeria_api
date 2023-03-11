@@ -4,6 +4,8 @@ class Order < ApplicationRecord
 
   has_many :items, class_name: 'OrderItem'
 
+  belongs_to :seller, optional: true
+
   enum status: {
     open: 0,
     running: 1,

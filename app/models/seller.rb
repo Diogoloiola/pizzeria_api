@@ -12,6 +12,8 @@ class Seller < ActiveRecord::Base
   validates :name, :profile, :cpf, presence: true
   validates :email, uniqueness: true
 
+  has_many :orders
+
   enum profile: {
     admin: 0,
     functionarty: 1

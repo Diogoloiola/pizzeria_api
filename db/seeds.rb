@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Ingredient.destroy_all
-PromotionalCode.destroy_all
 Pizza.destroy_all
+PromotionalCode.destroy_all
 Seller.destroy_all
 Discount.destroy_all
 Order.destroy_all

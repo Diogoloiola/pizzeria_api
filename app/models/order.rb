@@ -6,6 +6,8 @@ class Order < ApplicationRecord
 
   belongs_to :seller, optional: true
 
+  accepts_nested_attributes_for :items
+
   enum status: {
     open: 0,
     running: 1,

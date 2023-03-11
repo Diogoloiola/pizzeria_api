@@ -8,6 +8,7 @@ class Pizza < ApplicationRecord
   has_many :ingredients, through: :pizza_default_ingredients
 
   has_many :prices, class_name: 'PizzaPrice', dependent: :destroy
+  has_many :order_items, dependent: :destroy
 
   accepts_nested_attributes_for :prices
 end

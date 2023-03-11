@@ -42,7 +42,7 @@ Discount.create(deduction_in_percent: 5, code: SecureRandom.uuid.slice(0, 5))
 order = Order.new(
   discount_code: Discount.last.id,
   seller_id: Seller.last.id,
-  items_attributes: [{
+  itens_attributes: [{
     pizza_id: Pizza.last.id,
     size: :small
   }]

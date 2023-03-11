@@ -7,7 +7,7 @@ RSpec.describe Order, type: :model do
   end
 
   context 'validando os relacionamentos' do
-    it { should have_many(:items) }
+    it { should have_many(:itens) }
     it { should belong_to(:seller).optional }
   end
 end

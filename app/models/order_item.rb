@@ -9,4 +9,14 @@ class OrderItem < ApplicationRecord
   has_many :remove, class_name: 'Ingredient', through: :order_item_remove_ingredients
 
   accepts_nested_attributes_for :add
+  accepts_nested_attributes_for :remove
+
+  validates :size, presence: true
+
+  enum size: {
+    small: 1,
+    medium: 2,
+    large: 3,
+    extra_large: 4
+  }
 end

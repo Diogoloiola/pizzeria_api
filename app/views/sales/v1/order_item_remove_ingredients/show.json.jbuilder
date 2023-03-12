@@ -1,0 +1,1 @@
+json.partial! "sales_v1_order_item_remove_ingredients/sales_v1_order_item_remove_ingredient", sales_v1_order_item_remove_ingredient: @sales_v1_order_item_remove_ingredient

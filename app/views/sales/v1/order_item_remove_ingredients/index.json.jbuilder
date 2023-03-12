@@ -1,0 +1,1 @@
+json.array! @sales_v1_order_item_remove_ingredients, partial: "sales_v1_order_item_remove_ingredients/sales_v1_order_item_remove_ingredient", as: :sales_v1_order_item_remove_ingredient

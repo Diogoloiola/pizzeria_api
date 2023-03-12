@@ -38,7 +38,8 @@ module Sales
       end
 
       def sales_order_params
-        params.require(:sales_v1_order).permit(:seller_id, :discount_code, itens_attributes: %i[pizza_id size])
+        params.require(:order).permit(:seller_id, :discount_code, :promotional_code_ids,
+                                      itens_attributes: %i[id pizza_id size])
       end
     end
   end

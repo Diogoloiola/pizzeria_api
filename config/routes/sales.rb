@@ -6,5 +6,6 @@ namespace :sales, defaults: { format: :json } do
     resources :discounts
     resources :promotional_codes
     resources :orders
+    resources :order_item_add_ingredients, only: %i[create destroy]
   end
 end
